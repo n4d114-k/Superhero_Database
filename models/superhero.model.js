@@ -1,17 +1,15 @@
-const mongoose = require('mongoose')
+const { Schema, model, Types } = require('mongoose')
 
-const Schema = mongoose.Schema
 
 const superheroSchema = new Schema({
-  nickname​: { type: String, required: true },
-  real_name​: { type: String, required: true },
-  origin_description​: { type: String, required: true },
-  superpowers: { type: String, required: true },
-  catch_phrase: { type: String, required: true },
+  nickname: { type: String, required: true, unique: true, trim: true, minlength: 3},
+  real_name: { type: String, required: true, unique: true, trim: true, minlength: 3},
+  origin_description: { type: String, required: true, trim: true },
+  superpowers: { type: Array, required: true },
+  catch_phrase: { type: String, required: true, trim: true }
   }, {
   timestamps: true
 })
 
-const Superhero = mongoose.model('Superhero', superheroSchema)
 
-module.exports = Superhero
+module.exports = model('Superhero', superheroSchema)
