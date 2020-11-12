@@ -1,0 +1,38 @@
+{
+  "name": "superhero_database",
+  "version": "1.0.0",
+  "description": "Superhero Database MERN Stack CRUD App",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "server": "nodemon app.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/n4d114-k/Superhero_Database.git"
+  },
+  "keywords": [
+    "mern-stack",
+    "mongodb-atlas",
+    "express-js",
+    "react-js",
+    "node-js"
+  ],
+  "author": "Nadiia K. <nadiia.k@pm.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/n4d114-k/Superhero_Database/issues"
+  },
+  "homepage": "https://github.com/n4d114-k/Superhero_Database#readme",
+  "dependencies": {
+    "config": "^3.3.2",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.13"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.6"
+  }
+}
