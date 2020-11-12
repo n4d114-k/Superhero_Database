@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors')
 const config = require('config')
 const mongoose = require('mongoose')
 
@@ -16,6 +17,8 @@ async function start() {
       useCreateIndex: true
     })
 
+    app.use(cors())
+    app.use(express.json())
     app.listen(PORT, () => console.log(`App has been started on port ${PORT}...`))
 
   } catch (e) {
