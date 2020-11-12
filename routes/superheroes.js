@@ -28,4 +28,32 @@ router.route('/add').post((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err))
 })
 
+router.route('/:id').get((req, res) => {
+  Superhero.findById(req.params.id)
+    .then(superhero => res.json(superhero))
+    .catch(err => res.status(400).json('Error: ' + err))
+});
+
+router.route('/:id').delete((req, res) => {
+  Superhero.findByIdAndDelete(req.params.id)
+    .then(() => res.json('Superhero deleted.'))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
+router.route('/update/:id').post((req, res) => {
+  Superhero.findById(req.params.id)
+    .then(superhero => {
+      superhero.nickname = req.body.nickname
+      superhero.real_name = req.body.real_name
+      superhero.origin_description = req.body.origin_description
+      superhero.superpowers = req.body.superpowers
+      superhero.catch_phrase = req.body.catch_phrase
+
+      superhero.save()
+        .then(() => res.json('Superhero updated!'))
+        .catch(err => res.status(400).json('Error: ' + err));
+    })
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
 module.exports = router
