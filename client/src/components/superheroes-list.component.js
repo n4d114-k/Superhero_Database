@@ -10,7 +10,7 @@ const Superhero = props => (
     <td>{props.superhero.superpowers}</td>
     <td>{props.superhero.catch_phrase.split(',')}</td>
     <td className="buttons">
-      <Link className="button button-green" to={"/edit/"+props.superhero._id}>edit</Link> <br /> <a className="button button-red" href="#" onClick={() => { props.deleteSuperhero(props.superhero._id) }}>delete</a>
+      <Link className="button button-green" to={"/edit/"+props.superhero._id}>edit</Link><br /><button className="button button-red" onClick={() => { props.deleteSuperhero(props.superhero._id) }}>delete</button>
     </td>
   </tr>
 )
@@ -21,7 +21,7 @@ export default class SuperheroesList extends Component {
 
     this.deleteSuperhero = this.deleteSuperhero.bind(this)
 
-    this.state = {superheroes: []}; //???
+    this.state = {superheroes: []};
   }
 
   componentDidMount() {
@@ -45,7 +45,7 @@ export default class SuperheroesList extends Component {
 
   superheroesList() {
     return this.state.superheroes.map(currentsuperhero => {
-      return <Superhero superhero={currentsuperhero} deleteSuperheroes={this.deleteSuperhero} key={currentsuperhero._id}/>;
+      return <Superhero superhero={currentsuperhero} deleteSuperhero={this.deleteSuperhero} key={currentsuperhero._id}/>;
     })
   }
 

@@ -99,6 +99,7 @@ td:last-child {
 }
 
 .button {
+  font-size: 1em;
   position: relative;
   font-family: inherit;
   color: var(--white);
@@ -107,7 +108,7 @@ td:last-child {
   padding: 2px;
   text-decoration: none;
   outline: 0;
-  height: 2rem;
+  height: 1.5rem;
   width: 4rem;
 }
 
