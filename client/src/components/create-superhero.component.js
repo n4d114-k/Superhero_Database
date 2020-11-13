@@ -88,7 +88,7 @@ export default class CreateSuperhero extends Component {
 
   render() {
     return (
-    <div>
+    <div className="superhero-form create-superhero">
       <h3>Create New Superhero</h3>
 
       <form onSubmit={this.onSubmit}>
@@ -97,7 +97,7 @@ export default class CreateSuperhero extends Component {
           <label>Nickname: </label>
           <input type="text"
               required
-              value={this.state.nickname}
+              defaultValue={this.state.nickname}
               onChange={this.onChangeNickname}
               />
         </div>
@@ -106,7 +106,7 @@ export default class CreateSuperhero extends Component {
           <label>Real Name: </label>
           <input  type="text"
               required
-              value={this.state.real_name}
+              defaultValue={this.state.real_name}
               onChange={this.onChangerRealName}
               />
         </div>
@@ -115,7 +115,7 @@ export default class CreateSuperhero extends Component {
           <label>Origin Description: </label>
           <input  type="text"
               required
-              value={this.state.origin_description}
+              defaultValue={this.state.origin_description}
               onChange={this.onChangeOriginDescription}
               />
         </div>
@@ -124,7 +124,7 @@ export default class CreateSuperhero extends Component {
           <label>Superpowers: </label>
           <input  type="text"
               required
-              value={this.state.superpowers}
+              defaultValue={this.state.superpowers}
               onChange={this.onChangeSuperpowers}
               />
         </div>
@@ -133,13 +133,13 @@ export default class CreateSuperhero extends Component {
           <label>Catch Phrase: </label>
           <input  type="text"
               required
-              value={this.state.catch_phrase}
+              defaultValue={this.state.catch_phrase}
               onChange={this.onChangeCatchPhrase}
               />
         </div>
 
         <div>
-          <input type="submit" value="Create Superhero" />
+          <input className="button button-blue" type="submit" value="Create Superhero" />
         </div>
       </form>
 

@@ -6,17 +6,15 @@ export default class Navbar extends Component {
   render() {
     return (
       <nav>
-        <Link to="/">Superhero Database</Link>
-        <div>
-          <ul>
-            <li className="navbar-item">
-              <Link to="/" className="nav-link">Superheroes</Link>
-            </li>
-            <li className="navbar-item">
-              <Link to="/create" className="nav-link">Create New Superhero</Link>
-            </li>
-          </ul>
-        </div>
+        <Link className="main" to="/">Superhero Database</Link>
+        <ul>
+          <li className="navbar-item">
+            <Link to="/">Superheroes</Link>
+          </li>
+          <li className="navbar-item">
+            <Link to="/create">Create New Superhero</Link>
+          </li>
+        </ul>
       </nav>
     );
   }

@@ -1,1 +1,147 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald");
 
+:root {
+  --black: #2b2c33;
+  --oxford-blue: #14274e;
+  --charcoal: #394867;
+  --cadet-grey: #9ba4b4;
+  --white: #f1f6f9;
+  --jungle-green: #0c4745;
+  --maroon: #741416;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--white);
+  color: var(--black);
+  font-family: "Oswald", sans-serif;
+}
+
+/* navbar styles */
+
+nav  {
+  background-color: var(--oxford-blue);
+  display: flex;
+  align-items: center;
+}
+
+.main {
+  margin: 0 2rem;
+}
+
+nav ul {
+  flex-grow: 2;
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav ul li {
+  list-style-type: none;
+  margin: 0 2rem;
+}
+
+nav a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+/* Superheroes List styles */
+
+.superheroes-list {
+  margin: 2rem 8rem;
+}
+
+table {
+  border-collapse: collapse;
+  border: 2px solid var(--oxford-blue);
+  text-align: center;
+  color: inherit;
+}
+
+thead {
+  background-color: var(--charcoal);
+  color: var(--white);
+
+}
+
+th {
+  height: 4rem;
+  font-weight: normal;
+}
+
+tr {
+  border-bottom: 1px solid var(--charcoal);
+}
+
+tr:last-child {
+  border-bottom: none;
+}
+
+td {
+  padding: 5px;
+  border-right: 1px solid var(--charcoal);
+}
+
+td:last-child {
+  border-right: none;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  position: relative;
+  font-family: inherit;
+  color: var(--white);
+  border: none;
+  border-radius: 3px;
+  padding: 2px;
+  text-decoration: none;
+  outline: 0;
+  height: 2rem;
+  width: 4rem;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button:focus {
+  top: 2px;
+}
+
+.button-green {
+  background-color: var(--jungle-green);
+}
+
+.button-red {
+  background-color: var(--maroon);
+}
+
+/* Create & Edit Superhero styles */
+
+.superhero-form {
+  margin: 2rem 8rem;
+  border: 2px solid var(--oxford-blue);
+  border-radius: 4px;
+  padding: 15px;
+}
+
+input {
+  font-family: monospace;
+  width: 99%;
+  outline: 0;
+  border: none;
+  border-bottom: 1px solid var(--charcoal);
+  background-color: transparent;
+}
+
+.button-blue {
+  background-color: var(--oxford-blue);
+  margin-top: 50px;
+  width: 15vw;
+  height: 5vh;
+}
