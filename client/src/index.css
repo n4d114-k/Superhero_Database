@@ -4,7 +4,7 @@
   --black: #2b2c33;
   --oxford-blue: #14274e;
   --charcoal: #394867;
-  --cadet-grey: #9ba4b4;
+  --cadet-grey: #aab5c7;
   --white: #f1f6f9;
   --jungle-green: #0c4745;
   --maroon: #741416;
@@ -28,6 +28,12 @@ nav  {
 
 .main {
   margin: 0 2rem;
+  color: var(--cadet-grey);
+  font-weight: 200;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 nav ul {

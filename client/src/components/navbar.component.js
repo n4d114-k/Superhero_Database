@@ -6,7 +6,7 @@ export default class Navbar extends Component {
   render() {
     return (
       <nav>
-        <Link className="main" to="/">Superhero Database</Link>
+        <h1 className="main">Superhero Database</h1>
         <ul>
           <li className="navbar-item">
             <Link to="/">Superheroes</Link>
