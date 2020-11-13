@@ -1,11 +1,25 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
+import Navbar from "./components/navbar.component";
+import SuperheroesList from "./components/superheroes-list.component";
+import EditSuperhero from "./components/edit-superhero.component";
+import CreateSuperhero from "./components/create-superhero.component";
+
+//import logo from './logo.svg';
 
 
 function App() {
   return (
-    <div>
-      <h1>App</h1>
-    </div>
+    <Router>
+      <div className='container'>
+        <Navbar />
+        <br />
+        <Route path="/" exact component={SuperheroesList} />
+        <Route path="/edit/:id" component={EditSuperhero} />
+        <Route path="/create" component={CreateSuperhero} />
+      </div>
+    </Router>
   );
 }
 
