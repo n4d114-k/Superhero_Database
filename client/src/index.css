@@ -54,16 +54,17 @@ nav a {
 
 nav a:hover {
   color: white;
-  text-decoration: underline; 
+  text-decoration: underline;
 }
 
 /* Superheroes List styles */
 
 .superheroes-list {
-  margin: 2rem 8rem;
+  margin: 2rem 5rem;
 }
 
 table {
+  width: 90vw;
   border-collapse: collapse;
   border: 2px solid var(--oxford-blue);
   text-align: center;
@@ -176,4 +177,39 @@ input {
 
 .button-blue:hover {
   background-color: var(--oxford-blue);
+}
+
+/* Pagination Styles */
+
+.pagination {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  outline: none;
+  color: var(--oxford-blue);
+}
+
+.pagination > .active > a {
+  background-color: var(--oxford-blue);
+  color: var(--white);
+  border-radius: 3px;
+}
+
+.pagination > li > a {
+  padding: 0.5em 1em;
+  outline: none;
+  cursor: pointer;
+}
+
+.previous a:hover,
+.next a:hover {
+  text-decoration: underline;
+}
+
+.previous.disabled a,
+.next.disabled a {
+  text-decoration: none;
+  cursor: default;
+  color: var(--cadet-grey);
 }

@@ -1,73 +1,103 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react'
+import axios from 'axios'
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import ReactPaginate from 'react-paginate';
 
-const Superhero = props => (
-  <tr>
-    <td>{props.superhero.nickname}</td>
-    <td>{props.superhero.real_name}</td>
-    <td>{props.superhero.origin_description}</td>
-    <td>{props.superhero.superpowers}</td>
-    <td>{props.superhero.catch_phrase.split(',')}</td>
-    <td className="buttons">
-      <Link className="button button-green" to={"/edit/"+props.superhero._id}>details</Link><button className="button button-red" onClick={() => { props.deleteSuperhero(props.superhero._id) }}>delete</button>
-    </td>
-  </tr>
-)
+
 
 export default class SuperheroesList extends Component {
   constructor(props) {
-    super(props);
-
-    this.deleteSuperhero = this.deleteSuperhero.bind(this)
-
-    this.state = {superheroes: []};
+      super(props);
+      this.state = {
+          offset: 0,
+          data: [],
+          perPage: 5,
+          currentPage: 0
+      };
+      this.handlePageClick = this
+          .handlePageClick
+          .bind(this);
   }
+  receivedData() {
+      axios.get('http://localhost:5000/superheroes/')
+          .then(res => {
 
-  componentDidMount() {
-    axios.get('http://localhost:5000/superheroes/')
-      .then(response => {
-        this.setState({ superheroes: response.data })
-      })
-      .catch((error) => {
-        console.log(error);
-      })
+              const data = res.data;
+              const slice = data.slice(this.state.offset, this.state.offset + this.state.perPage)
+              const postData = slice.map(pd => <tr id={pd._id} key={pd._id}>
+                      <td>{pd.nickname}</td>
+                      <td>{pd.real_name}</td>
+                      <td>{pd.origin_description}</td>
+                      <td>{pd.superpowers}</td>
+                      <td>{pd.catch_phrase.split(',')}</td>
+                      <td className="buttons">
+                        <Link className="button button-green" to={"/edit/"+pd._id}>details</Link><button className="button button-red" onClick={() => { this.deleteSuperhero(pd._id) }}>delete</button>
+                      </td>
+              </tr>)
+
+              this.setState({
+                  pageCount: Math.ceil(data.length / this.state.perPage),
+                  postData
+              })
+          });
   }
 
   deleteSuperhero(id) {
     axios.delete('http://localhost:5000/superheroes/'+id)
       .then(response => { console.log(response.data)});
-
-    this.setState({
-      superheroes: this.state.superheroes.filter(el => el._id !== id)
-    })
+    {document.getElementById(id).remove();}
   }
 
-  superheroesList() {
-    return this.state.superheroes.map(currentsuperhero => {
-      return <Superhero superhero={currentsuperhero} deleteSuperhero={this.deleteSuperhero} key={currentsuperhero._id}/>;
-    })
-  }
+  handlePageClick = (e) => {
+      const selectedPage = e.selected;
+      const offset = selectedPage * this.state.perPage;
 
+      this.setState({
+          currentPage: selectedPage,
+          offset: offset
+      }, () => {
+          this.receivedData()
+      });
+
+  };
+
+  componentDidMount() {
+      this.receivedData()
+  }
   render() {
-    return (
-      <div className="superheroes-list">
-        <table>
-          <thead>
-            <tr>
-              <th>Nickname</th>
-              <th>Real Name</th>
-              <th>Origin Description</th>
-              <th>Superpowers</th>
-              <th>Catch Phrase</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            { this.superheroesList() }
-          </tbody>
-        </table>
-      </div>
-    )
+      return (
+          <div>
+              <div className="superheroes-list">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Nickname</th>
+                      <th>Real Name</th>
+                      <th>Origin Description</th>
+                      <th>Superpowers</th>
+                      <th>Catch Phrase</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    { this.state.postData }
+                  </tbody>
+                </table>
+              </div>
+              <ReactPaginate
+                  previousLabel={"prev"}
+                  nextLabel={"next"}
+                  breakLabel={"..."}
+                  breakClassName={"break-me"}
+                  pageCount={this.state.pageCount}
+                  marginPagesDisplayed={2}
+                  pageRangeDisplayed={5}
+                  onPageChange={this.handlePageClick}
+                  containerClassName={"pagination"}
+                  subContainerClassName={"pages pagination"}
+                  activeClassName={"active"}/>
+          </div>
+
+      )
   }
 }

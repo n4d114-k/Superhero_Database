@@ -6,8 +6,6 @@ import SuperheroesList from "./components/superheroes-list.component";
 import EditSuperhero from "./components/edit-superhero.component";
 import CreateSuperhero from "./components/create-superhero.component";
 
-//import logo from './logo.svg';
-
 
 function App() {
   return (
