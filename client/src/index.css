@@ -18,22 +18,29 @@ body {
   font-family: "Oswald", sans-serif;
 }
 
+.container br {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
 /* navbar styles */
 
 nav  {
   background-color: var(--oxford-blue);
   display: flex;
   align-items: center;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .main {
   margin: 0 2rem;
   color: var(--cadet-grey);
   font-weight: 200;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
 }
 
 nav ul {
@@ -74,7 +81,10 @@ table {
 thead {
   background-color: var(--charcoal);
   color: var(--white);
-
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 th {
@@ -117,6 +127,10 @@ td:last-child {
   outline: 0;
   height: 1.5rem;
   width: 4rem;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .button:hover {
@@ -158,6 +172,14 @@ td:last-child {
   padding: 15px;
 }
 
+.superhero-form h3,
+.superhero-form label {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
 input {
   font-family: monospace;
   width: 99%;
@@ -188,6 +210,10 @@ input {
   list-style: none;
   outline: none;
   color: var(--oxford-blue);
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .pagination > .active > a {
