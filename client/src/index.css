@@ -99,10 +99,11 @@ td:last-child {
 }
 
 .button {
+  background-color: transparent;
+  display: inline-block;
   font-size: 1em;
   position: relative;
   font-family: inherit;
-  color: var(--white);
   border: none;
   border-radius: 3px;
   padding: 2px;
@@ -114,6 +115,7 @@ td:last-child {
 
 .button:hover {
   cursor: pointer;
+  color: var(--white);
 }
 
 .button:focus {
@@ -121,10 +123,23 @@ td:last-child {
 }
 
 .button-green {
+  color: var(--jungle-green);
+  border: 2px solid var(--jungle-green);
+  margin-bottom: 10px;
+}
+
+.button-green:hover {
   background-color: var(--jungle-green);
 }
 
 .button-red {
+  border: 2px solid var(--maroon);
+  color: var(--maroon);
+  height: 2rem;
+  width: 4.5rem;
+}
+
+.button-red:hover {
   background-color: var(--maroon);
 }
 
@@ -147,8 +162,13 @@ input {
 }
 
 .button-blue {
-  background-color: var(--oxford-blue);
+  border: 2px solid var(--oxford-blue);
+  color: var(--oxford-blue);
   margin-top: 50px;
   width: 15vw;
   height: 5vh;
+}
+
+.button-blue:hover {
+  background-color: var(--oxford-blue);
 }

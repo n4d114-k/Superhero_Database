@@ -21,22 +21,6 @@ export default class CreateSuperhero extends Component {
     }
   }
 
-  componentDidMount() {
-    axios.get('http://localhost:5000/superheroes/')
-      .then(response => {
-        if (response.data.length > 0) {
-          this.setState({
-            superheroes: response.data.map(superhero => superhero.nickname),
-            nickname: response.data[0].nickname
-          })
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      })
-
-  }
-
   onChangeNickname(e) {
     this.setState({
       nickname: e.target.value

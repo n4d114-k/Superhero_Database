@@ -10,7 +10,7 @@ const Superhero = props => (
     <td>{props.superhero.superpowers}</td>
     <td>{props.superhero.catch_phrase.split(',')}</td>
     <td className="buttons">
-      <Link className="button button-green" to={"/edit/"+props.superhero._id}>edit</Link><br /><button className="button button-red" onClick={() => { props.deleteSuperhero(props.superhero._id) }}>delete</button>
+      <Link className="button button-green" to={"/edit/"+props.superhero._id}>edit</Link><button className="button button-red" onClick={() => { props.deleteSuperhero(props.superhero._id) }}>delete</button>
     </td>
   </tr>
 )
@@ -52,7 +52,6 @@ export default class SuperheroesList extends Component {
   render() {
     return (
       <div className="superheroes-list">
-        <h3>Superheroes List</h3>
         <table>
           <thead>
             <tr>
