@@ -28,8 +28,8 @@ export default class SuperheroesList extends Component {
                       <td>{pd.nickname}</td>
                       <td>{pd.real_name}</td>
                       <td>{pd.origin_description}</td>
-                      <td>{pd.superpowers}</td>
-                      <td>{pd.catch_phrase.split(',')}</td>
+                      <td>{pd.superpowers.join(', ')}</td>
+                      <td>{pd.catch_phrase}</td>
                       <td className="buttons">
                         <Link className="button button-green" to={"/edit/"+pd._id}>details</Link><button className="button button-red" onClick={() => { this.deleteSuperhero(pd._id) }}>delete</button>
                       </td>

@@ -180,6 +180,11 @@ td:last-child {
   user-select: none;
 }
 
+.tip {
+  color: var(--charcoal);
+  font-size: .8em;
+}
+
 input {
   font-family: monospace;
   width: 99%;

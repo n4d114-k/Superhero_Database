@@ -103,7 +103,7 @@ export default class CreateSuperhero extends Component {
         </div>
 
         <div>
-          <label>Superpowers: </label>
+          <label>Superpowers <span className="tip">(separate with commas)</span>: </label>
           <input  type="text"
               required
               defaultValue={this.state.superpowers}
