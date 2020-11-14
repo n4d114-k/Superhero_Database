@@ -95,8 +95,6 @@ export default class EditSuperhero extends Component {
 
     axios.post('http://localhost:5000/superheroes/update/' + this.props.match.params.id, superhero)
       .then(res => console.log(res.data));
-
-    window.location = '/';
   }
 
   render() {
@@ -120,7 +118,7 @@ export default class EditSuperhero extends Component {
           <input  type="text"
               required
               defaultValue={this.state.real_name}
-              onChange={this.onChangerRealName}
+              onChange={this.onChangeRealName}
               />
         </div>
 
