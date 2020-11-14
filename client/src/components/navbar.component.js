@@ -8,10 +8,10 @@ export default class Navbar extends Component {
       <nav>
         <h1 className="main">Superhero Database</h1>
         <ul>
-          <li className="navbar-item">
-            <Link to="/">Superheroes</Link>
+          <li>
+            <Link to="/">Home</Link>
           </li>
-          <li className="navbar-item">
+          <li>
             <Link to="/create">Create New Superhero</Link>
           </li>
         </ul>

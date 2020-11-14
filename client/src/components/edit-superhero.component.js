@@ -102,7 +102,7 @@ export default class EditSuperhero extends Component {
   render() {
     return (
     <div className="superhero-form edit-superhero">
-      <h3>Edit Superhero</h3>
+      <h3>Details</h3>
 
       <form onSubmit={this.onSubmit}>
 
@@ -152,7 +152,7 @@ export default class EditSuperhero extends Component {
         </div>
 
         <div>
-          <input className="button button-blue" type="submit" value="Edit Superhero" />
+          <input className="button button-blue" type="submit" value="Save Changes" />
         </div>
 
       </form>
