@@ -28,12 +28,10 @@
   },
   "homepage": "https://github.com/n4d114-k/Superhero_Database#readme",
   "dependencies": {
-    "cloudinary": "^1.23.0",
     "config": "^3.3.2",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "mongoose": "^5.10.13",
-    "multer": "^1.4.2"
+    "mongoose": "^5.10.13"
   },
   "devDependencies": {
     "assert": "^2.0.0",
