@@ -65,7 +65,19 @@ export default class CreateSuperhero extends Component {
     console.log(superhero);
 
     axios.post('http://localhost:5000/superheroes/add/', superhero)
-      .then(res => console.log(res.data));
+      .then(res => console.log(res.data))
+      .then(() => {
+        Array.from(document.querySelectorAll("input")).forEach(
+          input => (input.value = ""));
+        this.setState({
+          nickname: '',
+          real_name: '',
+          origin_description: '',
+          superpowers: [],
+          catch_phrase: ''
+        });
+        {document.querySelector('h3').innerHTML = "New Superhero added! You can now add next one.";}
+      });
   }
 
   render() {
