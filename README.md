@@ -4,13 +4,15 @@
 
 This release is a development version of App(non-production ready).
 
-First of all clone this repository to start. Then `cd` to the Superhero_Database directory
+First of all clone this repository to start. Then `cd` to the *Superhero_Database* directory
 
 Your next step is to `npm install` to grab all the necessary dependencies.
 
-Then `npm run dev` and open localhost:3000 in your browser.
+Then `npm run dev` and open *localhost:3000* in your browser.
 
 Alternatively, you can `npm run server` to run server server-side only.
+
+To run Unit Tests `cd` to *test* directory and run `npm test`
 
 ***
 
