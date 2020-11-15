@@ -194,6 +194,41 @@ input {
   background-color: transparent;
 }
 
+.image-input::-webkit-file-upload-button {
+  display: inline-block;
+  background-color:transparent;
+  border: 1px solid var(--oxford-blue);
+  border-radius: 3px;
+  padding: 5px 8px;
+  margin-bottom: 5px;
+  outline: 0;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+}
+
+.image-input::file-selector-button {
+  display: inline-block;
+  background-color:transparent;
+  border: 1px solid var(--oxford-blue);
+  border-radius: 3px;
+  padding: 5px 8px;
+  margin-bottom: 5px;
+  outline: 0;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+}
+.image-input::-webkit-file-upload-button:hover {
+  background-color: var(--oxford-blue);
+  color: var(--white);
+}
+
+.image-input::file-selector-button:hover {
+  background-color: var(--oxford-blue);
+  color: var(--white);
+}
+
 .button-blue {
   border: 2px solid var(--oxford-blue);
   color: var(--oxford-blue);
@@ -204,6 +239,19 @@ input {
 
 .button-blue:hover {
   background-color: var(--oxford-blue);
+}
+
+.images-container {
+  border: 1px solid var(--oxford-blue);
+  border-radius: 3px;
+  width: calc(99% - 20px);
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.images-flex-container {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /* Pagination Styles */

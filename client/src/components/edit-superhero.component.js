@@ -149,7 +149,18 @@ export default class EditSuperhero extends Component {
               onChange={this.onChangeCatchPhrase}
               />
         </div>
-
+        <div>
+          <label>Add Images: </label>
+          <input id="fileInput"
+                type="file"
+                name="image"
+                multiple accept="image/jpg, image/jpeg, image/png"
+                className="image-input" />
+        </div>
+        <div className="images-container">
+          <p>Images</p>
+          <div className="images-flex-container"></div>
+        </div>
         <div>
           <input className="button button-blue" type="submit" value="Save Changes" />
         </div>
