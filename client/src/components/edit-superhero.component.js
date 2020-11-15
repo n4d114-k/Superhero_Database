@@ -94,7 +94,8 @@ export default class EditSuperhero extends Component {
     console.log(superhero);
 
     axios.post('http://localhost:5000/superheroes/update/' + this.props.match.params.id, superhero)
-      .then(res => console.log(res.data));
+      .then(res => console.log(res.data))
+      .then(() => {document.querySelector('h3').innerHTML = "Superhero Updated!";});
   }
 
   render() {

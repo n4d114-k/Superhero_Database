@@ -76,8 +76,8 @@ export default class CreateSuperhero extends Component {
           superpowers: [],
           catch_phrase: ''
         });
-        {document.querySelector('h3').innerHTML = "New Superhero added! You can now add next one.";}
-      });
+      })
+      .then(() => {document.querySelector('h3').innerHTML = "New Superhero added! You can now add next one.";});
   }
 
   render() {
