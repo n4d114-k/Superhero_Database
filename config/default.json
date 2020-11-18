@@ -1,4 +1,4 @@
 {
-  "port": 5000,
-  "mongoURI": "mongodb+srv://n4d114-k:ILtPjLbhR6LyFX5W@cluster0.qd7sv.mongodb.net/app?retryWrites=true&w=majority"
+  "PORT": "sample",
+  "MONGOURI": "sample"
 }

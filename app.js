@@ -13,8 +13,8 @@ app.use(cors())
 app.use('/superheroes', require('./routes/superheroes'))
 
 
-const PORT = config.get('port') || 5000
-const MONGO_URI = config.get('mongoURI')
+const PORT = config.get('PORT') || 5000
+const MONGO_URI = config.get('MONGOURI')
 
 async function start() {
   try {
